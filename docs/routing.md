@@ -91,6 +91,14 @@ Repair policies are `off`, `status-only`, `new-instance`, and `relaunch`. The de
 
 When both direct bridge delivery and the guarded composer fallback fail, and `fallbackToInbox` is true, FractalBot atomically writes the normalized envelope to `inboxPath` for later consumption.
 
+### Native queue bridge without CDP
+
+An existing Codex session can receive messages through the optional
+[`codex queue` bridge](codex-native-queue.md). It adapts the `ohMyCode`
+assignment interface and consumes a dedicated Codex heartbeat inbox, using a
+private pinned-session binding. Queue acceptance and task completion remain
+separate; replies are sent explicitly through FractalBot.
+
 ## Claude Desktop
 
 The `claudeDesktop` router submits to an already authenticated Claude chat page exposed by CDP.
