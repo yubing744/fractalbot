@@ -34,5 +34,11 @@ jobs:
       - name: Go test
         run: go test ./...
 
+  codex-queue-bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Native Codex queue bridge tests
         run: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/tests -v
